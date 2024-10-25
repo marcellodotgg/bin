@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a storage-like interface using IndexedDB under the hood",
   "main": "index.js",
+  "types": "types.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
