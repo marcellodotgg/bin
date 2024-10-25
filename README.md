@@ -1,5 +1,5 @@
 # 🗑️ bin
-Welcome to bin, we are an extremely lightweight storage like library for the browser. This package uses IndexedDB under-the-hood, with zero dependencies. We support `sessionStorage` and `localStorage` like behaviors, too.
+An extremely lightweight Web Storage-like API library using IndexedDB under-the-hood, with zero dependencies. Get the benefits of IndexedDB but with the simplicity and familiarity of `localStorage` and `sessionStorage`.
 
 ## Installation
 ```sh
