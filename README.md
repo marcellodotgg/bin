@@ -19,6 +19,7 @@ localBin.clear();
 // Session works similiarly, however, we will set a flag
 // in sessionStorage and will reset the data if the flag
 // is not present to simulate sessionStorage.
+
 await sessionBin.setItem('age', 14);
 const age2 = sessionBin.getItem('age');
 await sessionBin.removeItem('age');
