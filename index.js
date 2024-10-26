@@ -1,4 +1,4 @@
-class BinStorage {
+class StorageBin {
   #db = null;
   #dbName = "";
   #dbStore = "data";
@@ -128,13 +128,15 @@ class BinStorage {
   }
 }
 
-const localBin = new BinStorage("local_bin");
-const sessionBin = new BinStorage("session_bin");
+const sessionId = sessionStorage.getItem("storage_bin_session") || Date.now().toString();
+
+const localBin = new StorageBin("local_bin");
+const sessionBin = new StorageBin(`session_${sessionId}`);
 
 document.addEventListener("DOMContentLoaded", async function () {
-  if (window.sessionStorage && !sessionStorage.getItem("marcellodotgg_bin")) {
+  if (!sessionStorage.getItem("storage_bin_session")) {
+    sessionStorage.setItem("storage_bin_session", sessionId);
     await sessionBin.clear();
-    sessionStorage.setItem("marcellodotgg_bin", Date.now().toString());
   }
 });
 

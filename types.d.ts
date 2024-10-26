@@ -1,5 +1,5 @@
 declare module "@marcellodotgg/bin" {
-  interface BinStorage {
+  interface StorageBin {
     /**
      * When passed a key name and value, it will add that key
      * to the store, or update it if it already exists.
@@ -50,7 +50,7 @@ declare module "@marcellodotgg/bin" {
    * @see
    * https://github.com/marcellodotgg/bin
    */
-  const sessionBin: BinStorage;
+  const sessionBin: StorageBin;
   /**
    * A `localStorage` like store which behaves like `localStorage` except
    * it is async, allows large datasets, and uses IndexedDB under-the-hood.
@@ -58,5 +58,5 @@ declare module "@marcellodotgg/bin" {
    * @see
    * https://github.com/marcellodotgg/bin
    */
-  const localBin: BinStorage;
+  const localBin: StorageBin;
 }
