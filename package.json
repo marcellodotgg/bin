@@ -1,6 +1,6 @@
 {
-  "name": "@marcellodotgg/bin",
-  "version": "1.0.0-beta13",
+  "name": "@marcellodotgg/storage-bin",
+  "version": "1.0.0-alpha0",
   "description": "a storage-like interface using IndexedDB under the hood",
   "main": "index.js",
   "private": false,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcellodotgg/bin.git"
+    "url": "git+https://github.com/marcellodotgg/storage-bin.git"
   },
   "keywords": [
     "storage",
@@ -18,12 +18,12 @@
     "session-storage",
     "indexed-db"
   ],
-  "author": "Marcello Sabino <hey@marcello.gg>",
+  "author": "Marcello <hey@marcello.gg>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcellodotgg/bin/issues"
+    "url": "https://github.com/marcellodotgg/storage-bin/issues"
   },
-  "homepage": "https://github.com/marcellodotgg/bin#readme",
+  "homepage": "https://github.com/marcellodotgg/storage-bin#readme",
   "publishConfig": {
     "access": "public"
   }
