@@ -5,7 +5,7 @@ An extremely lightweight Web Storage-like API library using IndexedDB under-the-
 ## Installation
 
 ```sh
-npm i @marcellodotgg/bin
+npm i @marcellodotgg/storage-bin
 ```
 
 ## Usage
