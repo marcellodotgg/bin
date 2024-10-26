@@ -1,6 +1,6 @@
 {
   "name": "bin",
-  "version": "1.0.0",
+  "version": "0.0.0-beta0",
   "description": "a storage-like interface using IndexedDB under the hood",
   "main": "index.js",
   "types": "types.d.ts",
