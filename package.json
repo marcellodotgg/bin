@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/marcellodotgg/bin/issues"
   },
-  "homepage": "https://github.com/marcellodotgg/bin#readme"
+  "homepage": "https://github.com/marcellodotgg/bin#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
