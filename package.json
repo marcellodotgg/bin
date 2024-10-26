@@ -1,5 +1,5 @@
 {
-  "name": "bin",
+  "name": "@marcellodotgg/bin",
   "version": "1.0.0-beta3",
   "description": "a storage-like interface using IndexedDB under the hood",
   "main": "index.js",
