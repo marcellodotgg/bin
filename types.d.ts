@@ -1,4 +1,4 @@
-declare module "@marcellodotgg/bin" {
+declare module "@marcellodotgg/storage-bin" {
   interface StorageBin {
     /**
      * When passed a key name and value, it will add that key
