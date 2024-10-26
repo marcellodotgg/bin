@@ -1,7 +1,7 @@
 class LocalBin {
   #db = null;
-  #dbName = "bin_db";
-  #dbStore = "persistent_bin";
+  #dbName = "bin_local";
+  #dbStore = "data";
 
   constructor(db = null) {
     this.#db = db;
@@ -129,8 +129,8 @@ class LocalBin {
 
 class SessionBin {
   #db = null;
-  #dbName = "bin_db";
-  #dbStore = "temp_bin";
+  #dbName = "bin_session";
+  #dbStore = "data";
 
   constructor(db = null) {
     this.#db = db;
@@ -260,7 +260,7 @@ const localBin = new LocalBin();
 const sessionBin = new SessionBin();
 
 document.addEventListener("DOMContentLoaded", async function () {
-  if (!sessionStorage.getItem("marcellodotgg_bin")) {
+  if (window.sessionStorage && !sessionStorage.getItem("marcellodotgg_bin")) {
     await sessionBin.clear();
     sessionStorage.setItem("marcellodotgg_bin", "1");
   }
