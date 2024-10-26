@@ -138,6 +138,51 @@ document.addEventListener("DOMContentLoaded", async function () {
     sessionStorage.setItem("storage_bin_session", sessionId);
     await sessionBin.clear();
   }
+  removeInactiveSession(sessionId);
+  removeStaleSessions();
 });
+
+window.addEventListener("beforeunload", () => {
+  addInactiveSession(sessionId);
+});
+
+function getInactiveSessions() {
+  const inactiveSessionsJSON = localStorage.getItem("storage_bin_sessions") || "{}";
+  const inactiveSessions = JSON.parse(inactiveSessionsJSON);
+  return inactiveSessions;
+}
+
+function addInactiveSession(sessionId) {
+  const inactiveSessions = getInactiveSessions();
+
+  localStorage.setItem(
+    "storage_bin_sessions",
+    JSON.stringify({ ...inactiveSessions, [sessionId]: Date.now() })
+  );
+}
+
+function removeInactiveSession(sessionId) {
+  const inactiveSessions = getInactiveSessions();
+
+  delete inactiveSessions[sessionId];
+
+  localStorage.setItem("storage_bin_sessions", JSON.stringify({ ...inactiveSessions }));
+}
+
+function removeStaleSessions() {
+  const inactiveSessions = getInactiveSessions();
+  const fiveSecondsAgo = Date.now() - 5_000;
+
+  for (const sessionId of Object.keys(inactiveSessions)) {
+    if (inactiveSessions[sessionId] < fiveSecondsAgo) {
+      removeInactiveSession(sessionId);
+      deleteDatabase(sessionId);
+    }
+  }
+}
+
+function deleteDatabase(sessionId) {
+  indexedDB.deleteDatabase(`session_${sessionId}`);
+}
 
 module.exports = { localBin, sessionBin };
