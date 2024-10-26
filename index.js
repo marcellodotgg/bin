@@ -147,9 +147,8 @@ window.addEventListener("beforeunload", () => {
 });
 
 function getInactiveSessions() {
-  const inactiveSessionsJSON = localStorage.getItem("storage_bin_sessions") || "{}";
-  const inactiveSessions = JSON.parse(inactiveSessionsJSON);
-  return inactiveSessions;
+  const inactiveSessionsJSON = localStorage.getItem("inactive_storage_bin_sessions") || "{}";
+  return JSON.parse(inactiveSessionsJSON);
 }
 
 function addInactiveSession(sessionId) {
@@ -163,9 +162,7 @@ function addInactiveSession(sessionId) {
 
 function removeInactiveSession(sessionId) {
   const inactiveSessions = getInactiveSessions();
-
   delete inactiveSessions[sessionId];
-
   localStorage.setItem("storage_bin_sessions", JSON.stringify({ ...inactiveSessions }));
 }
 
