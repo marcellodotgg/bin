@@ -1,7 +1,7 @@
 class LocalBin {
   #db = null;
   #dbName = "bin_db";
-  #dbStore = "local";
+  #dbStore = "persistent_bin";
 
   constructor(db = null) {
     this.#db = db;
@@ -130,7 +130,7 @@ class LocalBin {
 class SessionBin {
   #db = null;
   #dbName = "bin_db";
-  #dbStore = "session";
+  #dbStore = "temp_bin";
 
   constructor(db = null) {
     this.#db = db;
