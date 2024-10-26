@@ -11,7 +11,7 @@ npm i @marcellodotgg/storage-bin
 ## Usage
 
 ```js
-import { localBin, sessionBin } from "@marcellodotgg/bin";
+import { localBin, sessionBin } from "@marcellodotgg/storage-bin";
 
 await localBin.setItem("age", 24);
 const age = await localBin.getItem("age");
