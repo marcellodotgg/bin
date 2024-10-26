@@ -48,7 +48,7 @@ declare module "@marcellodotgg/bin" {
    * It will add a flag to your `sessionStorage` and that is how
    * bin knows when to clear it.
    * @see
-   * https://github.com/marcellodotgg/bin
+   * https://github.com/marcellodotgg/storage-bin
    */
   const sessionBin: BinStorage;
   /**
@@ -56,7 +56,7 @@ declare module "@marcellodotgg/bin" {
    * it is async, allows large datasets, and uses IndexedDB under-the-hood.
    *
    * @see
-   * https://github.com/marcellodotgg/bin
+   * https://github.com/marcellodotgg/storage-bin
    */
   const localBin: BinStorage;
 }
