@@ -133,6 +133,8 @@ const sessionId = sessionStorage.getItem("storage_bin_session") || Date.now().to
 const localBin = new StorageBin("local_bin");
 const sessionBin = new StorageBin(`session_${sessionId}`);
 
+const INACTIVE_SESSIONS_KEY = "inactive_storage_bin_sessions";
+
 document.addEventListener("DOMContentLoaded", async function () {
   if (!sessionStorage.getItem("storage_bin_session")) {
     sessionStorage.setItem("storage_bin_session", sessionId);
@@ -147,7 +149,7 @@ window.addEventListener("beforeunload", () => {
 });
 
 function getInactiveSessions() {
-  const inactiveSessionsJSON = localStorage.getItem("inactive_storage_bin_sessions") || "{}";
+  const inactiveSessionsJSON = localStorage.getItem(INACTIVE_SESSIONS_KEY) || "{}";
   return JSON.parse(inactiveSessionsJSON);
 }
 
@@ -155,7 +157,7 @@ function addInactiveSession(sessionId) {
   const inactiveSessions = getInactiveSessions();
 
   localStorage.setItem(
-    "storage_bin_sessions",
+    INACTIVE_SESSIONS_KEY,
     JSON.stringify({ ...inactiveSessions, [sessionId]: Date.now() })
   );
 }
@@ -163,7 +165,7 @@ function addInactiveSession(sessionId) {
 function removeInactiveSession(sessionId) {
   const inactiveSessions = getInactiveSessions();
   delete inactiveSessions[sessionId];
-  localStorage.setItem("storage_bin_sessions", JSON.stringify({ ...inactiveSessions }));
+  localStorage.setItem(INACTIVE_SESSIONS_KEY, JSON.stringify({ ...inactiveSessions }));
 }
 
 function removeStaleSessions() {
