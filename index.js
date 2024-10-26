@@ -259,10 +259,10 @@ class SessionBin {
 const localBin = new LocalBin();
 const sessionBin = new SessionBin();
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   if (!sessionStorage.getItem("marcellodotgg_bin")) {
+    await sessionBin.clear();
     sessionStorage.setItem("marcellodotgg_bin", "1");
-    sessionBin.clear();
   }
 });
 

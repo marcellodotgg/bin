@@ -1,6 +1,6 @@
 {
   "name": "@marcellodotgg/bin",
-  "version": "1.0.0-beta9",
+  "version": "1.0.0-beta10",
   "description": "a storage-like interface using IndexedDB under the hood",
   "main": "index.js",
   "private": false,
