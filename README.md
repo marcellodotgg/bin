@@ -21,7 +21,8 @@ localBin.clear();
 
 // Session works similiarly, however, we will set a flag
 // in sessionStorage and will create a new database
-// for the session.
+// for the session. This allows us to mimic
+// the same behavior that `sessionStorage` gives you.
 
 await sessionBin.setItem("age", 14);
 const age2 = sessionBin.getItem("age");
